@@ -1,0 +1,12 @@
+<h1> Artists </h1>
+<p><%= link_to 'New Artist', new_artist_path %></p>
+<br />
+
+<% @artists.each do |artist| %>
+  <h2><%= artist.name %></h2>
+  <%= link_to 'Show Artist', artist_path(artist.id) %>
+  <br />
+  <%= link_to 'Edit Artist', edit_artist_path(artist) %>
+  <br />
+  <%= link_to 'Delete Artist', artist, method: :delete %>
+<% end %>
